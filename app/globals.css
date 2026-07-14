@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+
+  /* Brand Luxury Palette - MehndiGo Brand Specific */
+  --color-luxury-green: #111827;
+  /* Primary Neutral Text */
+  --color-luxury-green-light: #4B5563;
+  /* Secondary Neutral Text */
+  --color-luxury-green-dark: #111827;
+  /* Primary Neutral Text */
+  --color-luxury-green-rgb: 17, 24, 39;
+
+  --color-luxury-gold: #E53935;
+  /* Primary Brand Red */
+  --color-luxury-gold-light: #EF5350;
+  /* Light Red */
+  --color-luxury-gold-dark: #C62828;
+  /* Dark Red */
+  --color-luxury-gold-rgb: 229, 57, 53;
+
+  --color-luxury-cream: #FFFFFF;
+  /* White Background */
+  --color-luxury-cream-dark: #F5F5F5;
+  /* Section Background */
+  --color-luxury-cream-rgb: 255, 255, 255;
+
+  /* Custom Neutrals and Text overrides */
+  --color-neutral-border: #E5E5E5;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  /* Status Colors */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-info: #2563EB;
+
+  /* Shadows */
+  --shadow-luxury: 0 10px 40px -10px rgba(229, 57, 53, 0.08);
+  --shadow-luxury-hover: 0 20px 50px -10px rgba(229, 57, 53, 0.12);
+  --shadow-gold: 0 10px 30px -10px rgba(229, 57, 53, 0.2);
+}
+
+/* Base custom styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E53935;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C62828;
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #E5E5E5;
+}
+
+.glass-dark {
+  background: rgba(198, 40, 40, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Custom utility for gold border/text gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #EF5350 0%, #E53935 50%, #C62828 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C62828 0%, #E53935 100%);
+}
+
+.bg-luxury-gradient {
+  background: linear-gradient(135deg, #C62828 0%, #E53935 100%);
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
