@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useScroll } from "@/hooks/useScroll";
 import { NAV_LINKS, APK_DOWNLOAD_URL } from "@/constants";
-import { Menu, X, User, LogIn, Download, ChevronRight } from "lucide-react";
+import { Menu, X, Download, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -67,24 +67,7 @@ export default function Navbar() {
               Download APK
             </a>
             
-            {/* 2. Login: Ghost Button (No border, light background tint on hover) */}
-            <a
-              href="/login"
-              className="flex items-center gap-1 xl:gap-1.5 px-3 xl:px-4 py-1.5 xl:py-2 text-[10px] xl:text-xs font-bold uppercase tracking-wide text-luxury-green/80 hover:bg-luxury-green/5 rounded-full transition-all duration-300 whitespace-nowrap"
-            >
-              <LogIn className="w-3 xl:w-3.5 h-3 xl:h-3.5" />
-              Login
-            </a>
-            
-            {/* 3. Register: Text Button (Plain text, shifts color on hover) */}
-            <a
-              href="/register"
-              className="flex items-center gap-1 px-1.5 xl:px-2 py-1.5 xl:py-2 text-[10px] xl:text-xs font-bold uppercase tracking-wide text-luxury-green/70 hover:text-luxury-gold transition-colors duration-300 whitespace-nowrap"
-            >
-              <User className="w-3 h-3" />
-              Register
-            </a>
-            
+
             {/* 4. Book Artist: Primary CTA (Luxury Red backdrop, shadow-gold) */}
             <a
               href={isHome ? "#contact" : "/#contact"}
@@ -166,23 +149,7 @@ export default function Navbar() {
                     Download APK
                   </a>
 
-                  {/* Authentication Buttons (Login Outline + Register Ghost) */}
-                  <div className="flex items-center gap-3 pb-4 border-b border-luxury-gold/5">
-                    <a
-                      href="/login"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider text-luxury-green border border-luxury-green/10 hover:border-luxury-gold hover:text-luxury-gold rounded-full transition-colors"
-                    >
-                      Login
-                    </a>
-                    <a
-                      href="/register"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider text-luxury-green/85 hover:text-luxury-gold rounded-full transition-colors"
-                    >
-                      Register
-                    </a>
-                  </div>
+
                 </div>
 
                 {/* Mobile Menu Navigation Links */}

@@ -68,7 +68,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Call/WhatsApp</span>
-                    <a href="tel:+919876543210" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">+91 98765 43210</a>
+                    <a href="tel:+919257896000" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">+91 92578 96000</a>
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Email Us</span>
-                    <a href="mailto:hello@mehndigo.in" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">hello@mehndigo.in</a>
+                    <a href="mailto:mehendigo@gmail.com" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">mehendigo@gmail.com</a>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Office Address</span>
-                    <p className="text-sm font-bold text-luxury-green leading-relaxed">Level 4, Luxury Spaces, MG Road, Gurugram, India</p>
+                    <p className="text-sm font-bold text-luxury-green leading-relaxed">Pan India — Serving 50+ Cities Across India</p>
                   </div>
                 </div>
               </div>

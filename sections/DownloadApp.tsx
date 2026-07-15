@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, QrCode, Smartphone, Download } from "lucide-react";
-import Image from "next/image";
+import { Sparkles, Smartphone, Download, Star, CheckCircle, Clock } from "lucide-react";
 import { APK_DOWNLOAD_URL } from "@/constants";
 
 export default function DownloadApp() {
@@ -28,60 +27,35 @@ export default function DownloadApp() {
               Download the MehndiGo app to track your bookings, chat directly with verified artists, manage security deposits, and receive post-care notifications for the best henna stain.
             </p>
 
-            {/* Badges and QR code row */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 mt-4 justify-center lg:justify-start">
-              {/* App badges */}
-              <div className="flex flex-col gap-3">
-                <a
-                  href="#play-store"
-                  className="flex items-center gap-3 px-6 py-2.5 bg-luxury-green-dark border border-luxury-gold/25 rounded-2xl hover:border-luxury-gold transition-colors duration-300 w-52 text-left"
-                >
-                  <Smartphone className="w-6 h-6 text-luxury-gold" />
-                  <div>
-                    <span className="text-[10px] text-luxury-cream/50 uppercase font-semibold block leading-none mb-1">GET IT ON</span>
-                    <span className="text-sm text-white font-bold block leading-none">Google Play</span>
-                  </div>
-                </a>
-                
-                <a
-                  href="#app-store"
-                  className="flex items-center gap-3 px-6 py-2.5 bg-luxury-green-dark border border-luxury-gold/25 rounded-2xl hover:border-luxury-gold transition-colors duration-300 w-52 text-left"
-                >
-                  <Smartphone className="w-6 h-6 text-luxury-gold" />
-                  <div>
-                    <span className="text-[10px] text-luxury-cream/50 uppercase font-semibold block leading-none mb-1">DOWNLOAD ON THE</span>
-                    <span className="text-sm text-white font-bold block leading-none">App Store</span>
-                  </div>
-                </a>
-
-                <a
-                  href={APK_DOWNLOAD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-6 py-2.5 bg-luxury-gold text-white border border-luxury-gold rounded-2xl hover:bg-luxury-gold-dark transition-all duration-300 w-52 text-left shadow-lg hover:-translate-y-0.5"
-                >
-                  <Download className="w-6 h-6 text-white" />
-                  <div>
-                    <span className="text-[10px] text-white/70 uppercase font-semibold block leading-none mb-1">DIRECT INSTALL</span>
-                    <span className="text-sm font-bold block leading-none">Download APK</span>
-                  </div>
-                </a>
-              </div>
-
-              {/* QR Code Container */}
-              <div className="flex items-center gap-4 p-4 bg-luxury-green-dark/60 backdrop-blur-sm border border-luxury-gold/15 rounded-3xl">
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center p-2">
-                  <QrCode className="w-full h-full text-luxury-green" />
+            {/* Badges row */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center lg:justify-start">
+              <a
+                href="#play-store"
+                className="flex items-center gap-3 px-6 py-2.5 bg-luxury-green-dark border border-luxury-gold/25 rounded-2xl hover:border-luxury-gold transition-colors duration-300 w-52 text-left"
+              >
+                <Smartphone className="w-6 h-6 text-luxury-gold" />
+                <div>
+                  <span className="text-[10px] text-luxury-cream/50 uppercase font-semibold block leading-none mb-1">GET IT ON</span>
+                  <span className="text-sm text-white font-bold block leading-none">Google Play</span>
                 </div>
-                <div className="text-left">
-                  <span className="text-xs font-bold text-luxury-gold block uppercase tracking-wider mb-1">Scan to Download</span>
-                  <span className="text-xs text-luxury-cream/70 leading-relaxed block w-32">Instant download for iOS & Android devices.</span>
+              </a>
+
+              <a
+                href={APK_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-2.5 bg-luxury-gold text-white border border-luxury-gold rounded-2xl hover:bg-luxury-gold-dark transition-all duration-300 w-52 text-left shadow-lg hover:-translate-y-0.5"
+              >
+                <Download className="w-6 h-6 text-white" />
+                <div>
+                  <span className="text-[10px] text-white/70 uppercase font-semibold block leading-none mb-1">DIRECT INSTALL</span>
+                  <span className="text-sm font-bold block leading-none">Download APK</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Phone Mockup with Float */}
+          {/* Right Column: Inspiring Artist Content */}
           <div className="lg:col-span-5 flex justify-center relative">
             <motion.div
               animate={{ y: [0, -15, 0] }}
@@ -93,35 +67,52 @@ export default function DownloadApp() {
                 <div className="w-12 h-1 bg-luxury-gold/30 rounded-full" />
               </div>
 
-              {/* App Screen mock */}
-              <div className="w-full h-full bg-luxury-cream rounded-[38px] overflow-hidden flex flex-col items-center justify-between p-6 relative">
-                {/* Visual elements */}
-                <div className="w-full flex justify-between items-center mt-3">
-                  <span className="text-[10px] font-bold text-luxury-green/40">MehndiGo</span>
+              {/* App Screen */}
+              <div className="w-full h-full bg-luxury-cream rounded-[38px] overflow-hidden flex flex-col p-5 relative gap-3">
+                
+                {/* Header */}
+                <div className="flex justify-between items-center mt-3">
+                  <span className="text-[10px] font-bold text-luxury-green">MehndiGo</span>
                   <Sparkles className="w-3.5 h-3.5 text-luxury-gold" />
                 </div>
 
-                <div className="w-full text-center flex flex-col items-center gap-3">
-                  {/* Circle check */}
-                  <div className="w-16 h-16 rounded-full bg-luxury-green text-luxury-gold flex items-center justify-center shadow-gold">
-                    <Sparkles className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <p className="font-serif text-lg font-bold text-luxury-green">Artist Booking Confirmed</p>
-                    <p className="text-[10px] text-luxury-green/60">Your artist is arriving in 45 mins</p>
+                {/* Mehndi art preview card */}
+                <div className="w-full rounded-2xl overflow-hidden relative" style={{ height: "140px" }}>
+                  <img
+                    src="/service-bridal.png"
+                    alt="Mehndi Art"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-2">
+                    <span className="text-[9px] font-bold text-white">✨ Bridal Mehendi Design</span>
                   </div>
                 </div>
 
-                {/* Tracking panel mock */}
-                <div className="w-full bg-white border border-luxury-gold/20 p-3 rounded-2xl shadow-sm flex flex-col gap-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-bold text-luxury-green">Aanya Sharma (Artist)</span>
-                    <span className="text-[8px] bg-luxury-gold/20 text-luxury-gold-dark px-1.5 py-0.5 rounded-full font-bold">4.9★</span>
-                  </div>
-                  <div className="w-full h-2 bg-luxury-cream rounded-full overflow-hidden">
-                    <div className="w-2/3 h-full bg-luxury-gold rounded-full" />
+                {/* Artist stats */}
+                <div className="bg-white border border-luxury-gold/20 rounded-2xl p-3 flex flex-col gap-2 shadow-sm">
+                  <span className="text-[9px] font-bold text-luxury-green uppercase tracking-wide">Today's Earnings</span>
+                  <span className="font-serif text-lg font-bold text-luxury-green">₹4,200</span>
+                  <div className="flex items-center gap-1">
+                    <Star className="w-3 h-3 text-luxury-gold fill-luxury-gold" />
+                    <span className="text-[9px] font-bold text-luxury-gold">4.9 Rating</span>
+                    <span className="text-[9px] text-luxury-green/50 ml-1">· 3 bookings today</span>
                   </div>
                 </div>
+
+                {/* Upcoming booking */}
+                <div className="bg-luxury-green rounded-2xl p-3 flex flex-col gap-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <Clock className="w-3 h-3 text-luxury-gold" />
+                    <span className="text-[9px] font-bold text-luxury-gold uppercase">Next Booking</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-white">Priya Sharma — Bridal</span>
+                  <span className="text-[9px] text-luxury-cream/60">Today, 4:00 PM · Bandra, Mumbai</span>
+                  <div className="flex items-center gap-1 mt-1">
+                    <CheckCircle className="w-3 h-3 text-luxury-gold" />
+                    <span className="text-[9px] text-luxury-cream/80 font-semibold">₹3,500 confirmed</span>
+                  </div>
+                </div>
+
               </div>
             </motion.div>
           </div>

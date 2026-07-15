@@ -1,16 +1,12 @@
 "use client";
 
-import { Instagram, Facebook, Youtube, Send, Download } from "lucide-react";
+import { Instagram, Download, Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { APK_DOWNLOAD_URL } from "@/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Thank you for subscribing to our luxury newsletter!");
-  };
 
   return (
     <footer className="bg-luxury-green-dark border-t border-luxury-gold/20 text-luxury-cream pt-16 pb-8 relative overflow-hidden">
@@ -35,31 +31,13 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4 mt-2">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/mehndigoo"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-cream/80 hover:text-luxury-gold hover:border-luxury-gold transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-cream/80 hover:text-luxury-gold hover:border-luxury-gold transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-cream/80 hover:text-luxury-gold hover:border-luxury-gold transition-colors duration-300"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -129,27 +107,41 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
+          {/* Column 4: Contact Us */}
           <div>
-            <h3 className="font-serif text-lg text-luxury-gold font-medium mb-5 tracking-wide">Newsletter</h3>
-            <p className="text-sm text-luxury-cream/70 leading-relaxed mb-4">
-              Subscribe to get design trends, bridal guides, and exclusive discount codes.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2 relative">
-              <input
-                type="email"
-                required
-                placeholder="Your email address"
-                className="w-full bg-luxury-green px-4 py-2.5 text-sm rounded-full border border-luxury-gold/20 text-luxury-cream placeholder:text-luxury-cream/40 focus:outline-none focus:border-luxury-gold"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="absolute right-1 top-1 bottom-1 w-9 bg-luxury-gold hover:bg-luxury-gold-dark text-luxury-green rounded-full flex items-center justify-center transition-colors focus:outline-none"
-              >
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </form>
+            <h3 className="font-serif text-lg text-luxury-gold font-medium mb-5 tracking-wide">Contact Us</h3>
+            <ul className="flex flex-col gap-4">
+              <li>
+                <a
+                  href="tel:+91925789600"
+                  className="flex items-center gap-3 text-sm text-luxury-cream/70 hover:text-luxury-gold transition-colors duration-300 group"
+                >
+                  <span className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-luxury-green transition-all duration-300 flex-shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </span>
+                  <span>+91 92578 96000</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:mehendigo@gmail.com"
+                  className="flex items-center gap-3 text-sm text-luxury-cream/70 hover:text-luxury-gold transition-colors duration-300 group"
+                >
+                  <span className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-luxury-green transition-all duration-300 flex-shrink-0">
+                    <Mail className="w-4 h-4" />
+                  </span>
+                  <span>mehendigo@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <div className="flex items-center gap-3 text-sm text-luxury-cream/70">
+                  <span className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-gold flex-shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </span>
+                  <span>Pan India &mdash; Serving 50+ Cities</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
