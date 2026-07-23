@@ -68,7 +68,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Call/WhatsApp</span>
-                    <a href="tel:+919257896000" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">+91 92578 96000</a>
+                    <a href="tel:+919257890600" className="text-sm font-bold text-luxury-green hover:text-luxury-gold transition-colors">+91 9257890600</a>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Office Address</span>
-                    <p className="text-sm font-bold text-luxury-green leading-relaxed">Pan India — Serving 50+ Cities Across India</p>
+                    <p className="text-sm font-bold text-luxury-green leading-relaxed">Vaishali Nagar &mdash; Jaipur</p>
                   </div>
                 </div>
               </div>

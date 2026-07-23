@@ -113,13 +113,13 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li>
                 <a
-                  href="tel:+91925789600"
+                  href="tel:+919257890600"
                   className="flex items-center gap-3 text-sm text-luxury-cream/70 hover:text-luxury-gold transition-colors duration-300 group"
                 >
                   <span className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-luxury-green transition-all duration-300 flex-shrink-0">
                     <Phone className="w-4 h-4" />
                   </span>
-                  <span>+91 92578 96000</span>
+                  <span>+91 9257890600</span>
                 </a>
               </li>
               <li>
@@ -138,7 +138,7 @@ export default function Footer() {
                   <span className="w-9 h-9 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-gold flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </span>
-                  <span>Pan India &mdash; Serving 50+ Cities</span>
+                  <span>Vaishali Nagar &mdash; Jaipur</span>
                 </div>
               </li>
             </ul>
