@@ -1,8 +1,3 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import LoadingScreen from "@/components/LoadingScreen";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
@@ -22,53 +17,43 @@ import DownloadApp from "@/sections/DownloadApp";
 import FAQSection from "@/sections/FAQSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
+import StickyAppBanner from "@/components/StickyAppBanner";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import ReferralCTA from "@/components/ReferralCTA";
+import { getFAQSchema } from "@/lib/schema";
+import { FAQS } from "@/constants";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Show the loading screen for 3 seconds to allow assets to preload
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  const faqSchema = getFAQSchema(FAQS);
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {loading && <LoadingScreen key="loading" />}
-      </AnimatePresence>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <AnnouncementBar />
-          <Navbar />
-          <main className="relative flex flex-col w-full">
-            <Hero />
-            <TrustedBy />
-            <Stats />
-            <Features />
-            <HowItWorks />
-            <WhyChoose />
-            <FeaturedArtists />
-            <PopularServices />
-            <GallerySection />
-            <ReviewsSection />
-            <PromoVideo />
-            <PricingSection />
-            <BecomeArtist />
-            <DownloadApp />
-            <FAQSection />
-            <ContactSection />
-          </main>
-          <Footer />
-        </motion.div>
-      )}
+      <AnnouncementBar />
+      <Navbar />
+      <main className="relative flex flex-col w-full">
+        <Hero />
+        <TrustedBy />
+        <Stats />
+        <Features />
+        <HowItWorks />
+        <WhyChoose />
+        <FeaturedArtists />
+        <PopularServices />
+        <GallerySection />
+        <ReviewsSection />
+        <PromoVideo />
+        <PricingSection />
+        <BecomeArtist />
+        <DownloadApp />
+        <ReferralCTA />
+        <FAQSection />
+        <NewsletterSignup />
+        <ContactSection />
+      </main>
+      <Footer />
+      <StickyAppBanner />
     </>
   );
 }

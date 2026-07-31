@@ -78,13 +78,13 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-8"
             >
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold tracking-wide text-white rounded-full bg-luxury-green hover:bg-luxury-green-light border border-luxury-gold/20 shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 mr-2"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold tracking-wide text-white rounded-full bg-luxury-green hover:bg-luxury-green-light border border-luxury-gold/20 shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300"
               >
-                Become an Artist
+                Book Artist Now
               </a>
               <a
                 href={APK_DOWNLOAD_URL}
@@ -93,8 +93,27 @@ export default function Hero() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold tracking-wide text-luxury-green rounded-full bg-white hover:bg-neutral-50 border border-luxury-green/25 hover:border-luxury-gold shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300"
               >
                 <Download className="w-5 h-5 text-luxury-gold" />
-                Download APK
+                Download App (APK)
               </a>
+            </motion.div>
+
+            {/* Trust Badges */}
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-3 gap-2 w-full pt-4 border-t border-luxury-gold/15 text-luxury-green text-xs font-semibold"
+            >
+              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
+                <ShieldCheck className="w-4 h-4 text-luxury-gold flex-shrink-0" />
+                <span className="text-[11px] leading-tight">100% Organic Henna</span>
+              </div>
+              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
+                <Star className="w-4 h-4 text-luxury-gold fill-luxury-gold flex-shrink-0" />
+                <span className="text-[11px] leading-tight">4.9★ Rated (4.8k+)</span>
+              </div>
+              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
+                <Users className="w-4 h-4 text-luxury-gold flex-shrink-0" />
+                <span className="text-[11px] leading-tight">Backup Guarantee</span>
+              </div>
             </motion.div>
           </motion.div>
 
