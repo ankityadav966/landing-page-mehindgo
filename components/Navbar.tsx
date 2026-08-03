@@ -59,6 +59,7 @@ export default function Navbar() {
             {/* 1. Download APK: Secondary Button (Outlined, Red Border, Download Icon) */}
             <a
               href={APK_DOWNLOAD_URL}
+              download="MehndiGo.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 xl:gap-1.5 px-3 xl:px-4 py-1.5 xl:py-2 text-[10px] xl:text-xs font-bold uppercase tracking-wide text-luxury-gold border-2 border-luxury-gold hover:bg-luxury-gold hover:text-white rounded-full transition-all duration-300 shadow-sm whitespace-nowrap"

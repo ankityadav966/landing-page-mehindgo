@@ -88,6 +88,7 @@ export default function Hero() {
               </a>
               <a
                 href={APK_DOWNLOAD_URL}
+                download="MehndiGo.apk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold tracking-wide text-luxury-green rounded-full bg-white hover:bg-neutral-50 border border-luxury-green/25 hover:border-luxury-gold shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300"

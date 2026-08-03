@@ -42,6 +42,7 @@ export default function DownloadApp() {
 
               <a
                 href={APK_DOWNLOAD_URL}
+                download="MehndiGo.apk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 py-2.5 bg-luxury-gold text-white border border-luxury-gold rounded-2xl hover:bg-luxury-gold-dark transition-all duration-300 w-52 text-left shadow-lg hover:-translate-y-0.5"

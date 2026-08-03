@@ -49,6 +49,7 @@ export default function StickyAppBanner() {
       <div className="flex items-center gap-2 flex-shrink-0">
         <a
           href={APK_DOWNLOAD_URL}
+          download="MehndiGo.apk"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackAppDownload("sticky_banner")}

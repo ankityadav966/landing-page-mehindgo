@@ -1,3 +1,16 @@
+const CITY_COORDINATES: Record<string, { lat: number; lng: number }> = {
+  jaipur: { lat: 26.9124, lng: 75.7873 },
+  delhi: { lat: 28.6139, lng: 77.2090 },
+  mumbai: { lat: 19.0760, lng: 72.8777 },
+  bangalore: { lat: 12.9716, lng: 77.5946 },
+  hyderabad: { lat: 17.3850, lng: 78.4867 },
+  pune: { lat: 18.5204, lng: 73.8567 },
+  kolkata: { lat: 22.5726, lng: 88.3639 },
+  ahmedabad: { lat: 23.0225, lng: 72.5714 },
+  chandigarh: { lat: 30.7333, lng: 76.7794 },
+  chennai: { lat: 13.0827, lng: 80.2707 },
+};
+
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -20,10 +33,10 @@ export function getOrganizationSchema() {
     "description": "India's premier on-demand platform connecting verified professional Mehendi artists with brides and event hosts.",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9876543210",
+      "telephone": "+91-9257890600",
       "contactType": "customer service",
       "areaServed": "IN",
-      "availableLanguage": ["en", "hi"]
+      "availableLanguage": ["en", "hi", "gu", "mr", "pa", "ta", "te", "bn"]
     }
   };
 }
@@ -70,14 +83,17 @@ export function getMobileAppSchema() {
 
 export function getLocalBusinessSchema(city?: { name: string; priceRange: string; rating: number; reviewCount: number }) {
   const cityName = city ? city.name : "India";
+  const cityKey = cityName.toLowerCase();
+  const coords = CITY_COORDINATES[cityKey] || { lat: 26.9124, lng: 75.7873 };
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://mehndigo.in/#localbusiness-${cityName.toLowerCase()}`,
+    "@id": `https://mehndigo.in/#localbusiness-${cityKey}`,
     "name": `MehndiGo ${cityName} - On Demand Mehendi Artists`,
     "image": "https://mehndigo.in/service-bridal.png",
-    "url": city ? `https://mehndigo.in/city/${cityName.toLowerCase()}` : "https://mehndigo.in",
-    "telephone": "+91-9876543210",
+    "url": city ? `https://mehndigo.in/city/${cityKey}` : "https://mehndigo.in",
+    "telephone": "+91-9257890600",
     "priceRange": city ? city.priceRange : "₹1,500 - ₹15,000",
     "address": {
       "@type": "PostalAddress",
@@ -86,8 +102,8 @@ export function getLocalBusinessSchema(city?: { name: string; priceRange: string
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.9124,
-      "longitude": 75.7873
+      "latitude": coords.lat,
+      "longitude": coords.lng
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -148,7 +164,15 @@ export function getArticleSchema(article: {
       "name": article.authorName || "MehndiGo Editorial Team"
     },
     "publisher": {
-      "@id": "https://mehndigo.in/#organization"
+      "@type": "Organization",
+      "name": "MehndiGo",
+      "url": "https://mehndigo.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mehndigo.in/logo.jpeg",
+        "width": 512,
+        "height": 512
+      }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

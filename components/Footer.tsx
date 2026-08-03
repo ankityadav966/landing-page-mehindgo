@@ -102,6 +102,7 @@ export default function Footer() {
               <li>
                 <a
                   href={APK_DOWNLOAD_URL}
+                  download="MehndiGo.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-luxury-gold hover:text-white transition-colors flex items-center gap-1 mt-1"
