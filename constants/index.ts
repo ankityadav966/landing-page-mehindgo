@@ -1,15 +1,14 @@
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
   { label: "Artists", href: "#artists" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const APK_DOWNLOAD_URL = process.env.NEXT_PUBLIC_DOWNLOAD_APK_URL || "https://mehndigo.in/apps/mehndigo-release.apk";
+export const APK_DOWNLOAD_URL = process.env.NEXT_PUBLIC_DOWNLOAD_APK_URL || "/app-release.apk";
 
 export const ANNOUNCEMENT_TEXT = "✨ Special Wedding Season Offer: Book now and get a trial session at 50% off! | 1,000+ Verified Artists | 5,000+ Bookings Across India";
 
