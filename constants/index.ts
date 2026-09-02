@@ -1,14 +1,15 @@
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Features", href: "#features" },
-  { label: "Artists", href: "#artists" },
+  { label: "Artists", href: "/artists" },
   { label: "Pricing", href: "#pricing" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const APK_DOWNLOAD_URL = process.env.NEXT_PUBLIC_DOWNLOAD_APK_URL || "/app-release.apk";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.sonuy123.mehendigoo";
+export const APK_DOWNLOAD_URL = process.env.NEXT_PUBLIC_DOWNLOAD_APK_URL || PLAY_STORE_URL;
 
 export const ANNOUNCEMENT_TEXT = "✨ Special Wedding Season Offer: Book now and get a trial session at 50% off! | 1,000+ Verified Artists | 5,000+ Bookings Across India";
 

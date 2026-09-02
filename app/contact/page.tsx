@@ -62,7 +62,17 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-bold text-sm text-luxury-green">Corporate Headquarters</h3>
-                <p className="text-xs text-neutral-600 mt-0.5">Vaishali Nagar, Jaipur, Rajasthan 302021</p>
+                <p className="text-xs text-neutral-600 mt-0.5 leading-relaxed">
+                  Chanda Tower, 101-103, Gandhi Path Rd, opp. Grand Utsav Garden, near Agarwal Caters, Girnar Colony, Block E, Vaishali Nagar, Jaipur, Rajasthan 302021
+                </p>
+                <a
+                  href="https://maps.google.com/?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-luxury-gold hover:underline mt-1 block"
+                >
+                  <MapPin className="w-3.5 h-3.5" /> Navigate on Google Maps ↗
+                </a>
               </div>
             </div>
 
@@ -71,8 +81,15 @@ export default function ContactPage() {
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-sm text-luxury-green">WhatsApp Direct Chat</h3>
-                <p className="text-xs text-neutral-600 mt-0.5">Instant booking assistance via WhatsApp</p>
+                <h3 className="font-bold text-sm text-luxury-green">WhatsApp Admin Desk</h3>
+                <a
+                  href="https://wa.me/919257890600?text=Hello%20MehndiGo%20Admin%2C%20I%20have%20an%20enquiry%20regarding%20booking%20an%20artist."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-luxury-gold font-bold hover:underline mt-0.5 block"
+                >
+                  +91 9257890600 (Chat Directly with Admin)
+                </a>
               </div>
             </div>
           </div>
@@ -100,9 +117,46 @@ export default function ContactPage() {
                 <textarea rows={3} placeholder="Tell us about your requirements..." className="w-full px-4 py-3 rounded-xl border border-luxury-gold/20 text-sm focus:outline-none focus:border-luxury-gold bg-white"></textarea>
               </div>
               <button type="submit" className="w-full py-3.5 bg-luxury-gold hover:bg-luxury-gold-dark text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-gold transition-all">
-                Submit Inquiry
+                Submit Inquiry to Admin
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Live Interactive Google Map Section */}
+        <div className="mb-16">
+          <div className="bg-white p-6 rounded-3xl border border-luxury-gold/20 shadow-md">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <h2 className="font-serif font-bold text-xl text-luxury-green flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-luxury-gold" /> Head Office Location Map
+                </h2>
+                <p className="text-xs text-neutral-600 mt-0.5">
+                  Chanda Tower, 101-103, Gandhi Path Rd, Vaishali Nagar, Jaipur, Rajasthan 302021
+                </p>
+              </div>
+              <a
+                href="https://maps.google.com/?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-bold text-luxury-gold hover:underline whitespace-nowrap"
+              >
+                Open in Google Maps ↗
+              </a>
+            </div>
+            <div className="h-[360px] rounded-2xl overflow-hidden border border-luxury-gold/15">
+              <iframe
+                title="MehndiGo Corporate Headquarters Location"
+                src="https://maps.google.com/maps?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </main>

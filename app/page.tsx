@@ -22,9 +22,17 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import ReferralCTA from "@/components/ReferralCTA";
 import { getFAQSchema } from "@/lib/schema";
 import { FAQS } from "@/constants";
+import { fetchRealArtists, fetchRealServices } from "@/lib/api";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
   const faqSchema = getFAQSchema(FAQS);
+
+  const [realArtists, realServices] = await Promise.all([
+    fetchRealArtists().catch(() => []),
+    fetchRealServices().catch(() => []),
+  ]);
 
   return (
     <>
@@ -39,8 +47,8 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <WhyChoose />
-        <FeaturedArtists />
-        <PopularServices />
+        <FeaturedArtists initialArtists={realArtists.slice(0, 4)} />
+        <PopularServices initialServices={realServices} />
         <GallerySection />
         <ReviewsSection />
         <PromoVideo />

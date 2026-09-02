@@ -54,13 +54,17 @@
   --shadow-gold: 0 10px 30px -10px rgba(229, 57, 53, 0.2);
 }
 
-/* Base custom styles */
+/* Base custom styles & smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 96px;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
@@ -133,4 +137,25 @@ body {
 .animate-float-delayed {
   animation: float 6s ease-in-out infinite;
   animation-delay: 3s;
+}
+
+/* Lenis luxury smooth scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

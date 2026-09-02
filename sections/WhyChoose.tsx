@@ -26,10 +26,10 @@ export default function WhyChoose() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Card 1: Traditional Booking */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.95, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25 }}
             className="bg-white border border-red-100 p-8 rounded-3xl shadow-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-red-50/50 rounded-bl-full flex items-center justify-end p-4 text-red-400 select-none font-bold">
@@ -50,10 +50,10 @@ export default function WhyChoose() {
 
           {/* Card 2: MehndiGo */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0.95, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.25 }}
             className="bg-white border border-luxury-gold/30 p-8 rounded-3xl shadow-luxury-hover relative overflow-hidden ring-1 ring-luxury-gold/20"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-luxury-gold/10 rounded-bl-full flex items-center justify-end p-4 text-luxury-gold select-none">

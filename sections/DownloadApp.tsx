@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Smartphone, Download, Star, CheckCircle, Clock } from "lucide-react";
-import { APK_DOWNLOAD_URL } from "@/constants";
+import { APK_DOWNLOAD_URL, PLAY_STORE_URL } from "@/constants";
 
 export default function DownloadApp() {
   return (
@@ -30,7 +30,9 @@ export default function DownloadApp() {
             {/* Badges row */}
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center lg:justify-start">
               <a
-                href="#play-store"
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 py-2.5 bg-luxury-green-dark border border-luxury-gold/25 rounded-2xl hover:border-luxury-gold transition-colors duration-300 w-52 text-left"
               >
                 <Smartphone className="w-6 h-6 text-luxury-gold" />
@@ -42,7 +44,6 @@ export default function DownloadApp() {
 
               <a
                 href={APK_DOWNLOAD_URL}
-                download="MehndiGo.apk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 py-2.5 bg-luxury-gold text-white border border-luxury-gold rounded-2xl hover:bg-luxury-gold-dark transition-all duration-300 w-52 text-left shadow-lg hover:-translate-y-0.5"
@@ -50,7 +51,7 @@ export default function DownloadApp() {
                 <Download className="w-6 h-6 text-white" />
                 <div>
                   <span className="text-[10px] text-white/70 uppercase font-semibold block leading-none mb-1">DIRECT INSTALL</span>
-                  <span className="text-sm font-bold block leading-none">Download APK</span>
+                  <span className="text-sm font-bold block leading-none">Download App</span>
                 </div>
               </a>
             </div>

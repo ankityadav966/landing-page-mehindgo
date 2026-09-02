@@ -2,24 +2,46 @@
 
 import { FEATURES } from "@/constants";
 import { motion, Variants } from "framer-motion";
-import * as LucideIcons from "lucide-react";
+import {
+  ShieldCheck,
+  Lock,
+  MapPin,
+  Zap,
+  MessageSquare,
+  Star,
+  Clock,
+  Sparkles,
+  HelpCircle,
+} from "lucide-react";
+
+const ICON_MAP: Record<string, any> = {
+  ShieldCheck,
+  Lock,
+  MapPin,
+  Zap,
+  MessageSquare,
+  Star,
+  Clock,
+  Sparkles,
+};
 
 export default function Features() {
   const containerVariants: Variants = {
-    hidden: {},
+    hidden: { opacity: 1 },
     visible: {
+      opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0.9, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 80, damping: 12 },
+      transition: { duration: 0.3 },
     },
   };
 
@@ -54,7 +76,7 @@ export default function Features() {
         >
           {FEATURES.map((feature, idx) => {
             // Dynamically select the icon
-            const IconComponent = (LucideIcons as any)[feature.icon] || LucideIcons.HelpCircle;
+            const IconComponent = ICON_MAP[feature.icon] || HelpCircle;
 
             return (
               <motion.div

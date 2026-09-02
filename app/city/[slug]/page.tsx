@@ -8,7 +8,8 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import { CITIES_DATA } from "@/lib/city-data";
 import { getLocalBusinessSchema, getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
 import { MapPin, Star, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
-import { ARTISTS } from "@/constants";
+import CityArtistsSection from "@/components/CityArtistsSection";
+import { fetchRealArtists } from "@/lib/api";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,6 +41,8 @@ export default async function CityLandingPage({ params }: Props) {
   if (!city) {
     notFound();
   }
+
+  const cityArtists = await fetchRealArtists(city.name);
 
   const localBusinessSchema = getLocalBusinessSchema({
     name: city.name,
@@ -182,38 +185,7 @@ export default async function CityLandingPage({ params }: Props) {
         </section>
 
         {/* Featured Artists in City */}
-        <section className="mb-16">
-          <div className="flex justify-between items-end mb-8">
-            <div>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-luxury-green">
-                Featured Artists Serving {city.name}
-              </h2>
-              <p className="text-xs text-luxury-green/75 mt-1">Verified background checks, top portfolios, and 4.8+ ratings.</p>
-            </div>
-            <Link href="/#artists" className="text-xs font-bold uppercase tracking-wider text-luxury-gold hover:underline flex items-center gap-1">
-              View All Artists <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ARTISTS.map((artist) => (
-              <div key={artist.id} className="bg-white rounded-2xl border border-luxury-gold/15 p-5 shadow-sm hover:shadow-lg transition-all group">
-                <div className="relative h-44 rounded-xl overflow-hidden mb-4 bg-neutral-100">
-                  <img src={artist.image} alt={artist.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                  <span className="absolute top-2 right-2 bg-luxury-gold text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
-                    <Star className="w-2.5 h-2.5 fill-white" /> {artist.rating}
-                  </span>
-                </div>
-                <h3 className="font-serif font-bold text-base text-luxury-green">{artist.name}</h3>
-                <p className="text-xs text-luxury-gold font-semibold mb-2">{artist.speciality}</p>
-                <div className="flex justify-between items-center text-xs text-neutral-500 pt-2 border-t border-neutral-100">
-                  <span>{artist.experience} exp</span>
-                  <span className="font-bold text-luxury-green">{artist.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <CityArtistsSection artists={cityArtists} cityName={city.name} />
 
         {/* City FAQs */}
         <section className="mb-16 bg-white p-8 md:p-12 rounded-3xl border border-luxury-gold/20 shadow-md">

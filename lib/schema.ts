@@ -77,7 +77,7 @@ export function getMobileAppSchema() {
       "price": "0",
       "priceCurrency": "INR"
     },
-    "downloadUrl": "https://mehndigo.in/apps/mehndigo-release.apk"
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.sonuy123.mehendigoo"
   };
 }
 
@@ -97,7 +97,10 @@ export function getLocalBusinessSchema(city?: { name: string; priceRange: string
     "priceRange": city ? city.priceRange : "₹1,500 - ₹15,000",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": cityName,
+      "streetAddress": "Chanda Tower, 101-103, Gandhi Path Rd, opp. Grand Utsav Garden, near Agarwal Caters, Girnar Colony, Block E, Vaishali Nagar",
+      "addressLocality": cityName === "India" ? "Jaipur" : cityName,
+      "addressRegion": "Rajasthan",
+      "postalCode": "302021",
       "addressCountry": "IN"
     },
     "geo": {

@@ -7,21 +7,17 @@ import { APK_DOWNLOAD_URL } from "@/constants";
 
 export default function Hero() {
   const containerVariants: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 15 },
     },
   };
 
@@ -88,13 +84,12 @@ export default function Hero() {
               </a>
               <a
                 href={APK_DOWNLOAD_URL}
-                download="MehndiGo.apk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold tracking-wide text-luxury-green rounded-full bg-white hover:bg-neutral-50 border border-luxury-green/25 hover:border-luxury-gold shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300"
               >
                 <Download className="w-5 h-5 text-luxury-gold" />
-                Download App (APK)
+                Download App (Play Store)
               </a>
             </motion.div>
 
@@ -123,9 +118,8 @@ export default function Hero() {
             
             {/* Smartphone Device Mockup Frame */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative mx-auto border-[12px] border-luxury-green-dark bg-luxury-green-dark rounded-[2.5rem] h-[500px] w-[250px] sm:h-[580px] sm:w-[290px] shadow-2xl overflow-hidden border-luxury-gold/15"
             >
               {/* Speaker Notch */}

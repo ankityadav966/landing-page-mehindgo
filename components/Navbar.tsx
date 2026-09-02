@@ -45,7 +45,7 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
-                  href={isHome ? link.href : `/${link.href}`}
+                  href={link.href.startsWith('/') ? link.href : (isHome ? link.href : `/${link.href}`)}
                   className="text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-luxury-green/80 hover:text-luxury-gold whitespace-nowrap transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-luxury-gold hover:after:w-full after:transition-all after:duration-300"
                 >
                   {link.label}
@@ -56,16 +56,15 @@ export default function Navbar() {
 
           {/* Desktop Actions (Right-aligned, adjusts spacing responsively to fit on laptop viewports) */}
           <div className="hidden xl:flex items-center gap-2.5 xl:gap-4.5 flex-shrink-0 z-10">
-            {/* 1. Download APK: Secondary Button (Outlined, Red Border, Download Icon) */}
+            {/* 1. Download App: Secondary Button */}
             <a
               href={APK_DOWNLOAD_URL}
-              download="MehndiGo.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 xl:gap-1.5 px-3 xl:px-4 py-1.5 xl:py-2 text-[10px] xl:text-xs font-bold uppercase tracking-wide text-luxury-gold border-2 border-luxury-gold hover:bg-luxury-gold hover:text-white rounded-full transition-all duration-300 shadow-sm whitespace-nowrap"
             >
               <Download className="w-3 xl:w-3.5 h-3 xl:h-3.5" />
-              Download APK
+              Download App
             </a>
             
 
@@ -138,7 +137,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Actions (near the top of the drawer menu) */}
                 <div className="pt-6 flex flex-col gap-4">
-                  {/* Download APK: Secondary Button */}
+                  {/* Download App: Secondary Button */}
                   <a
                     href={APK_DOWNLOAD_URL}
                     target="_blank"
@@ -147,7 +146,7 @@ export default function Navbar() {
                     className="w-full text-center py-3 text-xs font-bold uppercase tracking-wider text-white rounded-full bg-luxury-gold hover:bg-luxury-gold-dark shadow-gold flex items-center justify-center gap-2"
                   >
                     <Download className="w-4 h-4" />
-                    Download APK
+                    Download App (Play Store)
                   </a>
 
 
@@ -158,7 +157,7 @@ export default function Navbar() {
                   {NAV_LINKS.map((link) => (
                     <a
                       key={link.href}
-                      href={isHome ? link.href : `/${link.href}`}
+                      href={link.href.startsWith('/') ? link.href : (isHome ? link.href : `/${link.href}`)}
                       onClick={() => setMobileMenuOpen(false)}
                       className="text-sm font-semibold text-luxury-green/80 hover:text-luxury-gold py-2.5 border-b border-luxury-gold/5 flex items-center justify-between group transition-colors"
                     >

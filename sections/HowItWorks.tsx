@@ -48,10 +48,10 @@ export default function HowItWorks() {
                 >
                   {/* Left/Right Card Panel */}
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                    initial={{ opacity: 0.95, x: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, type: "spring", stiffness: 70 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.25 }}
                     className="w-full lg:w-[45%] bg-white border border-luxury-gold/15 p-8 rounded-3xl shadow-luxury hover:shadow-luxury-hover hover:border-luxury-gold/30 transition-all duration-300 relative"
                   >
                     <span className="font-serif text-4xl sm:text-5xl font-black text-luxury-gold/15 absolute top-4 right-6 select-none">

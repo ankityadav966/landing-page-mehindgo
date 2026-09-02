@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SmoothScroll from "@/components/SmoothScroll";
 import { getOrganizationSchema, getWebsiteSchema, getMobileAppSchema, getLocalBusinessSchema } from "@/lib/schema";
 
 const playfair = Playfair_Display({
@@ -100,7 +101,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased font-sans bg-background text-foreground min-h-screen flex flex-col`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
         <WhatsAppButton />
       </body>
     </html>

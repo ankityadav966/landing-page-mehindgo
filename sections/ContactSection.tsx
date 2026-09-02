@@ -29,8 +29,17 @@ export default function ContactSection() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Send customer enquiry directly to MehndiGo Admin WhatsApp +91 9257890600
+    const text = encodeURIComponent(
+      `Hello MehndiGo Admin! I have submitted a booking enquiry on the website:\n\n` +
+      `👤 Customer Name: ${data.name}\n` +
+      `📞 Customer Phone: ${data.phone}\n` +
+      `📧 Email: ${data.email}\n` +
+      `💅 Preferred Style: ${data.style}\n` +
+      `📝 Details/Event: ${data.message}\n\n` +
+      `Please call me on ${data.phone} to coordinate my booking.`
+    );
+    window.open(`https://wa.me/919257890600?text=${text}`, "_blank");
     setIsSubmitted(true);
     reset();
     setTimeout(() => setIsSubmitted(false), 5000);
@@ -87,26 +96,51 @@ export default function ContactSection() {
                     <MapPin className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Office Address</span>
-                    <p className="text-sm font-bold text-luxury-green leading-relaxed">Vaishali Nagar &mdash; Jaipur</p>
+                    <span className="text-xs text-luxury-green/50 uppercase font-semibold block tracking-wider mb-1">Corporate Headquarters</span>
+                    <p className="text-xs font-bold text-luxury-green leading-relaxed">
+                      Chanda Tower, 101-103, Gandhi Path Rd, opp. Grand Utsav Garden, near Agarwal Caters, Girnar Colony, Block E, Vaishali Nagar, Jaipur, Rajasthan 302021
+                    </p>
+                    <a
+                      href="https://maps.google.com/?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-luxury-gold hover:underline mt-1.5"
+                    >
+                      <MapPin className="w-3 h-3" /> View on Google Maps ↗
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Google Map Mockup */}
-            <div className="relative h-[220px] rounded-3xl overflow-hidden border border-luxury-gold/20 shadow-sm bg-luxury-cream-dark">
-              <img
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600"
-                alt="Map Background Location Mock"
-                className="w-full h-full object-cover opacity-60"
+            {/* Live Interactive Google Map Embed */}
+            <div className="relative h-[280px] rounded-3xl overflow-hidden border border-luxury-gold/20 shadow-sm bg-luxury-cream-dark flex flex-col">
+              <iframe
+                title="MehndiGo Head Office Location"
+                src="https://maps.google.com/maps?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 bg-black/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white/95 backdrop-blur-sm border border-luxury-gold/20 px-4 py-2.5 rounded-2xl shadow-luxury flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-luxury-gold" />
-                  <span className="text-xs font-bold text-luxury-green">Gurugram Central Hub</span>
+              <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm border border-luxury-gold/20 px-3.5 py-2 rounded-xl shadow-luxury flex items-center justify-between pointer-events-auto">
+                <div className="flex items-center gap-1.5 overflow-hidden">
+                  <MapPin className="w-4 h-4 text-luxury-gold shrink-0" />
+                  <span className="text-[11px] font-bold text-luxury-green truncate">
+                    Chanda Tower, Vaishali Nagar, Jaipur
+                  </span>
                 </div>
+                <a
+                  href="https://maps.google.com/?q=Chanda+Tower,+101-103,+Gandhi+Path+Rd,+opp.+Grand+Utsav+Garden,+near+Agarwal+Caters,+Girnar+Colony,+Block+E,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-bold text-luxury-gold hover:underline shrink-0 ml-2"
+                >
+                  Open Maps ↗
+                </a>
               </div>
             </div>
           </div>
@@ -245,8 +279,11 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                   className="w-full py-4 rounded-full bg-luxury-green hover:bg-luxury-green-light border border-luxury-gold/20 text-white font-semibold tracking-wide shadow-luxury hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none focus:outline-none"
                 >
-                  {isSubmitting ? "Sending Details..." : "Submit Enquiry"}
+                  {isSubmitting ? "Sending Details..." : "Send Enquiry to Admin (+91 9257890600)"}
                 </button>
+                <p className="text-[11px] text-center text-luxury-green/60 mt-2">
+                  All enquiries are received directly by the MehndiGo Admin helpline (<b>+91 9257890600</b>). Our admin will call you to arrange the service.
+                </p>
               </div>
             </form>
           </div>

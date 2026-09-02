@@ -28,10 +28,10 @@ export default function Stats() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-luxury-green-dark/40 backdrop-blur-sm border border-luxury-gold/15 rounded-3xl"
         >
           {STATS.map((stat, index) => (
