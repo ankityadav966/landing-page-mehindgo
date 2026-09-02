@@ -22,7 +22,7 @@ export default function InviteClient({ refCode }: InviteClientProps) {
     }
   };
 
-  const playStoreUrl = `https://play.google.com/store/apps/details?id=com.sonuy123.mehendigoo&referrer=utm_source%3Dmehndigo_invite%26utm_medium%3Ddeeplink%26utm_content%3Dref%3D${refCode}`;
+  const playStoreUrl = `market://details?id=com.sonuy123.mehendigoo&referrer=utm_source%3Dmehndigo_invite%26utm_medium%3Ddeeplink%26utm_content%3Dref%3D${refCode}`;
   const appSchemeUrl = `mehendigoo://invite?ref=${refCode}`;
 
   const handleDownloadClick = () => {

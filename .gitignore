@@ -42,3 +42,11 @@ next-env.d.ts
 
 # binary app builds (>100MB limits on GitHub)
 *.apk
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
